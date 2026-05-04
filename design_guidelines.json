@@ -1,0 +1,121 @@
+{
+  "theme": "dark",
+  "archetype_selected": {
+    "name": "Archetype 4 (Swiss & High-Contrast) + Retro-Futurism",
+    "reasoning": "For a highly technical IT infrastructure dashboard monitoring Proxmox, Synology, QNAP, and Veeam, the interface must prioritize uncompromised data density and scannability. A 'Control Room' / dark terminal aesthetic builds trust and authority. Color is used strictly functionally—monochrome base with high-saturation status indicators."
+  },
+  "colors": {
+    "background": "#000000",
+    "surface": "#09090b",
+    "surface_elevated": "#18181b",
+    "border": "#27272a",
+    "text_primary": "#ffffff",
+    "text_secondary": "#a1a1aa",
+    "text_muted": "#71717a",
+    "status": {
+      "success": {
+        "text": "#34d399",
+        "bg": "rgba(52, 211, 153, 0.1)",
+        "border": "rgba(52, 211, 153, 0.25)"
+      },
+      "warning": {
+        "text": "#fbbf24",
+        "bg": "rgba(251, 191, 36, 0.1)",
+        "border": "rgba(251, 191, 36, 0.25)"
+      },
+      "error": {
+        "text": "#f43f5e",
+        "bg": "rgba(244, 63, 94, 0.1)",
+        "border": "rgba(244, 63, 94, 0.25)"
+      }
+    },
+    "brand_accent": "#ffffff",
+    "brand_accent_foreground": "#000000"
+  },
+  "typography": {
+    "fonts": {
+      "heading": "Chivo, sans-serif",
+      "body": "IBM Plex Sans, sans-serif",
+      "mono": "JetBrains Mono, monospace"
+    },
+    "hierarchy": {
+      "h1": "text-4xl sm:text-5xl font-bold tracking-tighter text-white",
+      "h2": "text-2xl sm:text-3xl font-bold tracking-tight text-white",
+      "h3": "text-xl font-semibold tracking-tight text-white",
+      "h4": "text-lg font-medium text-white",
+      "body": "text-sm md:text-base leading-relaxed text-zinc-300",
+      "overline": "text-xs font-mono uppercase tracking-[0.2em] text-zinc-500",
+      "data_value": "text-2xl font-mono tracking-tight text-white"
+    }
+  },
+  "layout_and_spacing": {
+    "strategy": "The 'Control Room' Grid",
+    "padding_scale": "p-4, p-6 for nested containers. Strict internal padding to prevent collision.",
+    "surface_strategy": "Grid Borders: Expose the skeleton. Heavy use of border-collapse style layouts with sharp 1px border-zinc-800. No soft shadows. Use geometric, structured spacing.",
+    "alignment": "Left-align all data and labels for quick reading. Use JetBrains Mono for numbers to align decimals/digits perfectly."
+  },
+  "components": {
+    "button": "Primary: bg-white text-black hover:bg-zinc-200. Secondary: border border-zinc-800 bg-transparent text-white hover:bg-zinc-900. Sharp edges (rounded-sm).",
+    "card": "border border-zinc-800 bg-zinc-950 p-6 rounded-md. Hover: border-zinc-700 transition-colors.",
+    "table": "Dense data table for backups. border-b border-zinc-800. Strip Vercel-look defaults. Use monospace for status columns, sizes, and timestamps.",
+    "badge": "Sharp edges (rounded-sm). 1px border. Colored based on status (success/warning/error).",
+    "input": "bg-black border border-zinc-800 text-white focus:ring-1 focus:ring-white transition-all."
+  },
+  "motion": {
+    "hover": "Explicit text colors on hover. Subtle -translate-y-[1px] on actionable cards.",
+    "transitions": "transition-all duration-200 ease-in-out."
+  },
+  "media": {
+    "icon_library": "@phosphor-icons/react",
+    "icon_weight": "Duotone for active/accent, Regular for general UI.",
+    "images": [
+      {
+        "category": "Login Background",
+        "url": "https://images.pexels.com/photos/5480781/pexels-photo-5480781.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+        "description": "Dark data center. Use with heavy bg-black/80 overlay to serve as the immersive background for the 'Autentificare' (Login) screen."
+      },
+      {
+        "category": "Data Flow Accent",
+        "url": "https://images.unsplash.com/photo-1762279389053-d5a30239ae45?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NDQ2MzR8MHwxfHNlYXJjaHwzfHxhYnN0cmFjdCUyMGRhdGElMjBmbG93JTIwZGlnaXRhbHxlbnwwfHx8fDE3NzUxMTc0MTV8MA&ixlib=rb-4.1.0&q=85",
+        "description": "Abstract neon lines. Mask with gradient and use at 10% opacity inside the empty states or high-level statistics cards."
+      }
+    ]
+  },
+  "romanian_translation_map": {
+    "Dashboard": "Panou de Control",
+    "Companies": "Companii",
+    "Backups": "Copii de Siguranță",
+    "Alerts": "Alerte",
+    "Email Settings": "Setări Email (Office 365)",
+    "Login": "Autentificare",
+    "Email": "Adresă de Email",
+    "Password": "Parolă",
+    "Sign In": "Conectare",
+    "Success": "Succes",
+    "Failed": "Eșuat",
+    "Warning": "Avertisment",
+    "Platform": "Platformă",
+    "History": "Istoric",
+    "Add Company": "Adaugă Companie",
+    "Edit": "Editează",
+    "Delete": "Șterge",
+    "Status": "Stare",
+    "Overview": "Vedere Generală",
+    "Notifications": "Notificări"
+  },
+  "accessibility_and_testing": {
+    "testing_attributes": "All interactive elements MUST include data-testid attributes (e.g., data-testid='login-submit-button', data-testid='filter-proxmox-btn', data-testid='nav-dashboard').",
+    "contrast": "Ensure all text against black/zinc-950 meets minimum 4.5:1 ratio."
+  },
+  "instructions_to_main_agent": [
+    "Install @phosphor-icons/react for icons.",
+    "Use Shadcn UI for core components (Table, Select, Dialog, Card, Form) but strip the default rounded-lg radii. Override with rounded-sm for a sharper, technical feel.",
+    "Implement the Romanian language explicitly across all UI text using the provided translation map.",
+    "Login Page: Use the 'Login Background' image. Create a Glassmorphism card (backdrop-blur-xl bg-zinc-950/60 border border-white/10) for the login form.",
+    "Dashboard Layout: Use a dense 'Control Room' grid. Place High-level Stats at the top, followed by a filterable Data Table for backups, and an Alerts Panel on the side (or as a drawer).",
+    "Data Presentation: Use JetBrains Mono for ALL technical data (IPs, Backup Sizes, Timestamps, Status Badges).",
+    "Platform Filter: Create toggle buttons for Proxmox, Synology, QNAP, Veeam. Use monochrome when inactive, text-white bg-zinc-800 when active.",
+    "Charts: Use Shadcn Charts (Recharts) to visualize Backup History Timeline. Format the charts with dark gridlines (stroke='#27272a') and monochrome bars, using color ONLY for failed/warning states.",
+    "Ensure 'Office 365' settings form exists within 'Setări Email', including inputs for Client ID, Tenant ID, and Secret (mocked functionality)."
+  ]
+}
